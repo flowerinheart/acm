@@ -1,0 +1,16 @@
+2139.cpp:27:12: error: no viable conversion from 'pair<int, int>' to 'const value_type' (aka 'const int')
+    q.push(make_pair(start, 0));
+           ^~~~~~~~~~~~~~~~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/4.8/../../../../include/c++/4.8/bits/stl_queue.h:496:30: note: passing argument to parameter '__x' here
+      push(const value_type& __x)
+                             ^
+2139.cpp:29:14: error: no viable conversion from 'const int' to 'Edge' (aka 'pair<int, int>')
+        Edge edge = q.top(); q.pop();
+             ^      ~~~~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/4.8/../../../../include/c++/4.8/bits/stl_pair.h:96:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const int' to 'const std::pair<int, int> &' for 1st argument
+    struct pair
+           ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/4.8/../../../../include/c++/4.8/bits/stl_pair.h:118:2: note: candidate template ignored: could not match 'pair<type-parameter-0-0, type-parameter-0-1>' against 'const int'
+        pair(const pair<_U1, _U2>& __p)
+        ^
+2 errors generated.

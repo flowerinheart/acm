@@ -1,4 +1,5 @@
 //用两个数组或者一个hashtable都能解决
+//设计一个电话簿, get返回一个没有被占用的号码)
 class PhoneDirectory {
 public:
     /** Initialize your data structure here
@@ -22,7 +23,8 @@ public:
     
     /** Check if a number is available or not. */
     bool check(int number) {
-        return hash.count(number) > 0;
+        // return hash.count(number) > 0;
+        return hash.find(number) != hash.end();
     }
     
     /** Recycle or release a number. */

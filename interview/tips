@@ -1,0 +1,16 @@
+c++添加下面的
+
+static int x {[](){
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(NULL);
+    std::cout.tie(NULL);
+    return NULL;
+}()};
+
+
+写java注意点
+1. 必须使用new创建
+2. 容器对象基础类型要用包装类
+
+双指针
+while(head != null && head.next != null && head.next.next != null)

@@ -1,3 +1,4 @@
+//两个链表代表两个数字, 逆序存放的，将两个链表相加， 一定要注意循环条件里面还有extra不等于0
 static int x {[](){
     std::ios::sync_with_stdio(false);
     std::cin.tie(NULL);
