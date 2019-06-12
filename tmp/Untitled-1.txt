@@ -1,0 +1,48 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+int V[301][301];
+int dp[301][301];
+
+
+// Each test case begins with one line containing three integers R, C and K
+//  there are R more lines containing C integers each
+int main() {
+    int T, R, C, K;
+    cin >> T;
+    for(int t = 1; t <= T; t++) {
+        cin >> R >> C >> K;
+        for(int i = 0; i < R; i++) {
+            for(int j = 0; j < C; j++) {
+                cin >> V[i][j];
+                dp[i][j] = 0;
+            }
+        }
+
+        for(int j = 0;j < R;j++){
+            dp[j][0] = 1;
+            for(int k = 1;k < C;k++){
+                if(abs(V[j][k] - V[j][k-1]) <= K){
+                    dp[j][k] = dp[j][k-1] + 1;
+                } else {
+                    dp[j][k] = 1;
+                }
+            }
+        }
+
+        int maxArea = 0;
+        for(int j = 0;j < R;j++){
+            for(int k = 0;k < C;k++){
+                int min = INT_MAX;
+                for(int u = j;u >= 0;u--){
+                    if(min > dp[u][k])
+                        min = dp[u][k];
+                    int area = min * (j-u+1);
+                    if(area > maxArea)
+                        maxArea = area;
+                }
+            }
+        }
+        printf("Case #%d: %d", t, maxArea);
+    }
+}
